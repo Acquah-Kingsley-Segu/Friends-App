@@ -1,5 +1,5 @@
 <div class="d-flex flex-column my-3 align-items-center">
-  <h2>Edit User Info <% resource_name.to_s.humanize %></h2>
+  <h4>Edit User Info <% resource_name.to_s.humanize %></h2>
 
   <div class="mx-5 border p-3 w-75 rounded shadow d-flex flex-column">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -17,7 +17,6 @@
         <i>(leave blank if you don't want to change it)</i><br />
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-sm", placeholder: "New Password" %>
         <% if @minimum_password_length %>
-          <br />
           <em><%= @minimum_password_length %> characters minimum</em>
         <% end %>
       </div>
@@ -35,16 +34,18 @@
         <%= f.submit "Update Info", class: "btn btn-dark btn-md w-50 mb-3" %>
       </div>
     <% end %>
+  </div>
 
-    <div class="d-flex flex-column align-items-center">
-      <h5>Cancel my account</h5>
-      <div class="d-flex w-50 justify-content-center align-items-center">
-        <p class="mr-3 mt-2">Unhappy?</p>
-        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-md" %>
-      </div>
-      
-      <%= link_to "Back", :back %>
+  <div class="card w-75 mt-3">
+    <div class="card-header d-flex justify-content-center">
+      <h4>Cancel my account</h4>
     </div>
-
+    <div class="card-body">
+      <h6 class="card-title">Unhappy?</h6>
+      <div class="card-text d-flex justify-content-center align-items-center">
+        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-md mr-3" %>
+        <%= link_to "Back", :back, class: "" %>
+      </div>
+    </div>
   </div>
 </div>
