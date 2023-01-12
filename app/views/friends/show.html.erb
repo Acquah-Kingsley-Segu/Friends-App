@@ -1,0 +1,8 @@
+<div class="jumbotron mx-5 mt-4">
+  <h1 class="display-4"> <%= @friend.first_name %> <%= @friend.last_name %> </h1>
+  <p class="lead">
+    <%= @friend.email %> | <%= @friend.phone %> | <%= @friend.twitter_handle %> 
+  </p>
+  <a class="btn btn-dark btn-md" href="<%= friends_path %>" role="button">Done</a>
+  <a class="btn btn-dark btn-md" href="<%= edit_friend_path %>" role="button">Edit</a>
+</div>
